@@ -7,7 +7,7 @@ try {
     const token = core.getInput('token', { required: true })
     const username = core.getInput('username', { required: true })
 
-    process.env.token = token
+    process.env['PAT_1'] = token
 
     githubReadmeStats.generateStatsCard({ username, theme: core.getInput('theme') })
         .then(card => {

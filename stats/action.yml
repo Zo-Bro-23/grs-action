@@ -1,0 +1,12 @@
+name: 'GitHub Readme Stats'
+description: '⚡️ Dynamically generated stats for your github readmes'
+inputs:
+  username:
+    description: 'GitHub Username'
+    required: true
+  token:
+    description: 'GitHub Token'
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

@@ -12,6 +12,10 @@ jobs:
       - name: Generate Stats
         uses: ./stats/
         id: generate
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          username: 'Zo-Bro-23'
+          theme: 'onedark'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: grs

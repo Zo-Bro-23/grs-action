@@ -3,8 +3,8 @@ import * as github from '@actions/github'
 import * as githubReadmeStats from '@zo-bro-23/github-readme-stats-test'
 import * as fs from 'fs'
 
-const token = core.getInput('token')
-const username = core.getInput('username')
+const token = core.getInput('token', {required: true})
+const username = core.getInput('username', {required: true})
 
 process.env.token = token
 

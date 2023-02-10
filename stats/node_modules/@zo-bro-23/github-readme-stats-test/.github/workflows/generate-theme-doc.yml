@@ -1,0 +1,40 @@
+name: Generate Theme Readme
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "themes/index.js"
+
+jobs:
+  generateThemeDoc:
+    runs-on: ubuntu-latest
+    name: Generate theme doc
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: npm install, generate readme
+        run: |
+          npm ci
+          npm run theme-readme-gen
+        env:
+          CI: true
+
+      - name: Run Script
+        uses: skx/github-action-tester@master
+        with:
+          script: ./scripts/push-theme-readme.sh
+        env:
+          CI: true
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          GH_REPO: ${{ secrets.GH_REPO }}

@@ -15,7 +15,10 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           username: 'Zo-Bro-23'
-          theme: 23
+          theme: 'onedark'
+          hide_border: 'true'
+          border_radius: 100
+          card_width: '200'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: grs

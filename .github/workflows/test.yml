@@ -18,6 +18,7 @@ jobs:
           theme: 'onedark'
           hide_border: 'true'
           fetch_multipage: true
+          count_private: true
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: grs

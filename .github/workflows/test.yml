@@ -13,14 +13,14 @@ jobs:
         uses: ./stats/
         id: generate
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT }}
           username: 'Zo-Bro-23'
           theme: 'onedark'
           hide_border: 'true'
           fetch_multipage: true
           count_private: true
           include_all_commits: true
-          width: 200
+          card_width: 200
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: grs

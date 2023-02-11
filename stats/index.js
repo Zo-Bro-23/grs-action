@@ -31,6 +31,8 @@ try {
         exclude_repo: core.getInput('exclude_repo')
     }
 
+    console.log(options)
+
     process.env['PAT_1'] = core.getInput('token', { required: true })
     process.env['FETCH_MULTI_PAGE_STARS'] = core.getInput('fetch_multipage')
 

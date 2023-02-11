@@ -10,7 +10,7 @@ try {
         show_icons: core.getInput('show_icons'),
         count_private: core.getInput('count_private'),
         include_all_commits: core.getInput('include_all_commits'),
-        hide: core.getInput('hide')?.split(','),
+        hide: core.getInput('hide'),
         hide_title: core.getInput('hide_title'),
         hide_border: core.getInput('hide_border'),
         line_height: core.getInput('line_height'),
@@ -28,7 +28,7 @@ try {
         text_bold: core.getInput('text_bold'),
         card_width: core.getInput('card_width'),
         ring_color: core.getInput('ring_color'),
-        exclude_repo: core.getInput('exclude_repo')?.split(',')
+        exclude_repo: core.getInput('exclude_repo')
     }
 
     process.env['PAT_1'] = core.getInput('token', { required: true })

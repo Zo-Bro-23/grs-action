@@ -13,7 +13,7 @@ jobs:
         uses: ./stats/
         id: generate
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.TOKEN }}
           username: 'Zo-Bro-23'
           theme: 'onedark'
           hide_border: 'true'

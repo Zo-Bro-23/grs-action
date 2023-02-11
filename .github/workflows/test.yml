@@ -19,6 +19,8 @@ jobs:
           hide_border: 'true'
           fetch_multipage: true
           count_private: true
+          include_all_commits: true
+          width: 200
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: grs

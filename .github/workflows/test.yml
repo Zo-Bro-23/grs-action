@@ -5,7 +5,7 @@ jobs:
   one:
     permissions: write-all
     runs-on: ubuntu-latest
-    name: Testing the action
+    name: One
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -26,7 +26,7 @@ jobs:
   two:
     permissions: write-all
     runs-on: ubuntu-latest
-    name: Testing the action
+    name: Two
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -36,7 +36,7 @@ jobs:
         with:
           token: ${{ secrets.TOKEN }}
           options: 'username=Zo-Bro-23'
-          path: '/grs/something/blah/something.svg'
+          path: './grs/something/blah/something.svg'
       - name: Push
         uses: crazy-max/ghaction-github-pages@v3
         with:
@@ -47,7 +47,7 @@ jobs:
   three:
     permissions: write-all
     runs-on: ubuntu-latest
-    name: Testing the action
+    name: Three
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -67,7 +67,7 @@ jobs:
   four:
     permissions: write-all
     runs-on: ubuntu-latest
-    name: Testing the action
+    name: Four
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -88,7 +88,7 @@ jobs:
   five:
     permissions: write-all
     runs-on: ubuntu-latest
-    name: Testing the action
+    name: Five
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -109,7 +109,7 @@ jobs:
   six:
     permissions: write-all
     runs-on: ubuntu-latest
-    name: Testing the action
+    name: Six
     steps:
       - name: Checkout
         uses: actions/checkout@v3

@@ -7,7 +7,7 @@ import * as path from 'path'
 
 try {
     const options = queryString.parse(core.getInput('options', { required: true }))
-    const card = core.getInput('card', { required: false })
+    const card = core.getInput('card', { required: false }) || 'stats'
     const file = core.getInput('path')
 
     process.env['PAT_1'] = core.getInput('token', { required: true })
@@ -16,7 +16,7 @@ try {
     fs.mkdirSync(path.dirname(file || 'grs/stats.svg'), { recursive: true })
 
     switch (card) {
-        case '':
+        case 'stats':
             githubReadmeStats.generateStatsCard(options)
                 .then(card => {
                     fs.writeFileSync(file || 'grs/stats.svg', card)

@@ -39,6 +39,7 @@ try {
                 .then(card => {
                     fs.writeFileSync(file || 'grs/wakatime.svg', card)
                 })
+            break
         default:
             throw new Error('Card type must be `repo`, `top-langs`, or `wakatime`')
             break

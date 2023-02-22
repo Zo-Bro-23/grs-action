@@ -13,7 +13,7 @@ try {
     process.env['PAT_1'] = core.getInput('token', { required: true })
     process.env['FETCH_MULTI_PAGE_STARS'] = core.getInput('fetch_multipage')
 
-    fs.mkdirSync(path.dirname(file), { recursive: true })
+    fs.mkdirSync(path.dirname(file || 'grs/stats.svg'), { recursive: true })
 
     switch (card) {
         case '':

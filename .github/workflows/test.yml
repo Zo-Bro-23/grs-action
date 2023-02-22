@@ -2,7 +2,7 @@ name: Test
 on: push
 
 jobs:
-  test:
+  one:
     permissions: write-all
     runs-on: ubuntu-latest
     name: Testing the action
@@ -10,19 +10,102 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Generate Stats
-        uses: ./stats/
+        uses: ./
         id: generate
         with:
           token: ${{ secrets.TOKEN }}
-          username: 'Zo-Bro-23'
-          theme: 'onedark'
-          hide_border: 'true'
-          fetch_multipage: true
-          count_private: true
-          include_all_commits: true
-          card_width: 200
-      - uses: stefanzweifel/git-auto-commit-action@v4
+          options: 'asidaisjdiads'
+          path: 'grs/README.svg'
+      - uses: uses: crazy-max/ghaction-github-pages@v3
         with:
-          branch: grs
-          create_branch: true
-          push_options: '--force'
+          target_branch: grs
+          build_dir: grs
+  two:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    name: Testing the action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Generate Stats
+        uses: ./
+        id: generate
+        with:
+          token: ${{ secrets.TOKEN }}
+          options: 'username=Zo-Bro-23'
+          path: '/grs/something/blah/something.svg'
+      - uses: uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: grs
+          build_dir: grs
+  three:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    name: Testing the action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Generate Stats
+        uses: ./
+        id: generate
+        with:
+          token: ${{ secrets.TOKEN }}
+          options: 'username=Zo-Bro-23&theme=onedark'
+      - uses: uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: grs
+          build_dir: grs
+  four:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    name: Testing the action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Generate Stats
+        uses: ./
+        id: generate
+        with:
+          token: ${{ secrets.TOKEN }}
+          options: 'username=Zo-Bro-23&theme=onedark'
+          card: 'top-langs'
+      - uses: uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: grs
+          build_dir: grs
+  five:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    name: Testing the action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Generate Stats
+        uses: ./
+        id: generate
+        with:
+          token: ${{ secrets.TOKEN }}
+          options: 'username=Zo-Bro-23&repo=zoauth&theme=onedark'
+          card: 'repo'
+      - uses: uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: grs
+          build_dir: grs
+  six:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    name: Testing the action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Generate Stats
+        uses: ./
+        id: generate
+        with:
+          token: ${{ secrets.TOKEN }}
+          options: 'username=@ZoBro23&theme=onedark'
+          card: 'wakatime'
+      - uses: uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: grs
+          build_dir: grs        

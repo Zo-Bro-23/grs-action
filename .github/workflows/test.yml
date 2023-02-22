@@ -20,7 +20,6 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     name: Two
-    needs: one
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -35,7 +34,6 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     name: Three
-    needs: two
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -49,7 +47,6 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     name: Four
-    needs: three
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -64,7 +61,6 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     name: Five
-    needs: four
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -79,7 +75,6 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     name: Six
-    needs: five
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -94,7 +89,7 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     name: Push
-    needs: six
+    needs: [one, two, three, four, five, six]
     steps:
       - name: Push
         uses: crazy-max/ghaction-github-pages@v3

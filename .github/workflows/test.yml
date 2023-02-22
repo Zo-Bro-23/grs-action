@@ -16,7 +16,8 @@ jobs:
           token: ${{ secrets.TOKEN }}
           options: 'asidaisjdiads'
           path: 'grs/README.svg'
-      - uses: uses: crazy-max/ghaction-github-pages@v3
+      - name: Push
+        uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: grs
           build_dir: grs

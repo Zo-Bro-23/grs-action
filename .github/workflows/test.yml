@@ -32,7 +32,7 @@ jobs:
         id: generate
         with:
           token: ${{ secrets.TOKEN }}
-          options: 'username=Zo-Bro-23'
+          options: 'username=${{ github.repository_owner }}'
           path: './grs/something/blah/something.svg'
       - uses: actions/upload-artifact@master
         with:
@@ -50,7 +50,7 @@ jobs:
         id: generate
         with:
           token: ${{ secrets.TOKEN }}
-          options: 'username=Zo-Bro-23&theme=onedark'
+          options: 'username=${{ github.repository_owner }}&theme=onedark'
       - uses: actions/upload-artifact@master
         with:
           name: grs3
@@ -67,7 +67,7 @@ jobs:
         id: generate
         with:
           token: ${{ secrets.TOKEN }}
-          options: 'username=Zo-Bro-23&theme=onedark'
+          options: 'username=${{ github.repository_owner }}&theme=onedark'
           card: 'top-langs'
       - uses: actions/upload-artifact@master
         with:
@@ -85,7 +85,7 @@ jobs:
         id: generate
         with:
           token: ${{ secrets.TOKEN }}
-          options: 'username=Zo-Bro-23&repo=zoauth&theme=onedark'
+          options: 'username=${{ github.repository_owner }}&repo=zoauth&theme=onedark'
           card: 'repo'
       - uses: actions/upload-artifact@master
         with:

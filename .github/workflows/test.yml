@@ -16,13 +16,6 @@ jobs:
           token: ${{ secrets.TOKEN }}
           options: 'asidaisjdiads'
           path: 'grs/README.svg'
-      - name: Push
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: grs
-          build_dir: grs
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   two:
     permissions: write-all
     runs-on: ubuntu-latest
@@ -38,13 +31,6 @@ jobs:
           token: ${{ secrets.TOKEN }}
           options: 'username=Zo-Bro-23'
           path: './grs/something/blah/something.svg'
-      - name: Push
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: grs
-          build_dir: grs
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   three:
     permissions: write-all
     runs-on: ubuntu-latest
@@ -58,14 +44,7 @@ jobs:
         id: generate
         with:
           token: ${{ secrets.TOKEN }}
-          options: 'username=Zo-Bro-23&theme=onedark'
-      - name: Push
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: grs
-          build_dir: grs
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          options: 'username=Zo-Bro-23&theme=onedark' 
   four:
     permissions: write-all
     runs-on: ubuntu-latest
@@ -81,13 +60,6 @@ jobs:
           token: ${{ secrets.TOKEN }}
           options: 'username=Zo-Bro-23&theme=onedark'
           card: 'top-langs'
-      - name: Push
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: grs
-          build_dir: grs
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   five:
     permissions: write-all
     runs-on: ubuntu-latest
@@ -103,13 +75,6 @@ jobs:
           token: ${{ secrets.TOKEN }}
           options: 'username=Zo-Bro-23&repo=zoauth&theme=onedark'
           card: 'repo'
-      - name: Push
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: grs
-          build_dir: grs
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   six:
     permissions: write-all
     runs-on: ubuntu-latest
@@ -125,6 +90,12 @@ jobs:
           token: ${{ secrets.TOKEN }}
           options: 'username=@ZoBro23&theme=onedark'
           card: 'wakatime'
+  push:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    name: Push
+    needs: six
+    steps:
       - name: Push
         uses: crazy-max/ghaction-github-pages@v3
         with:
@@ -132,3 +103,4 @@ jobs:
           build_dir: grs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      

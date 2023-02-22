@@ -6,7 +6,7 @@ import queryString from 'query-string'
 
 try {
     const options = queryString.parse(core.getInput('options', { required: true }))
-    const card = core.getInput('card', { required: true })
+    const card = core.getInput('card', { required: false })
     const path = core.getInput('path')
 
     process.env['PAT_1'] = core.getInput('token', { required: true })

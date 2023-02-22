@@ -54,7 +54,7 @@ jobs:
           token: ${{ secrets.TOKEN }}
           options: 'username=Zo-Bro-23&theme=onedark'
       - name: Push
-				uses: crazy-max/ghaction-github-pages@v3
+        uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: grs
           build_dir: grs
@@ -73,8 +73,8 @@ jobs:
           options: 'username=Zo-Bro-23&theme=onedark'
           card: 'top-langs'
       - name: Push
-				uses: crazy-max/ghaction-github-pages@v3
-          with:
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
           target_branch: grs
           build_dir: grs
   five:
@@ -92,7 +92,7 @@ jobs:
           options: 'username=Zo-Bro-23&repo=zoauth&theme=onedark'
           card: 'repo'
       - name: Push
-				uses: crazy-max/ghaction-github-pages@v3
+        uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: grs
           build_dir: grs
@@ -111,7 +111,7 @@ jobs:
           options: 'username=@ZoBro23&theme=onedark'
           card: 'wakatime'
       - name: Push
-				uses: crazy-max/ghaction-github-pages@v3
+        uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: grs
-          build_dir: grs        
+          build_dir: grs 

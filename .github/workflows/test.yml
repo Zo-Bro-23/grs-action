@@ -16,6 +16,10 @@ jobs:
           token: ${{ secrets.TOKEN }}
           options: 'asidaisjdiads'
           path: 'grs/README.svg'
+      - uses: actions/upload-artifact@master
+        with:
+          name: grs1
+          path: grs
   two:
     permissions: write-all
     runs-on: ubuntu-latest
@@ -30,6 +34,10 @@ jobs:
           token: ${{ secrets.TOKEN }}
           options: 'username=Zo-Bro-23'
           path: './grs/something/blah/something.svg'
+      - uses: actions/upload-artifact@master
+        with:
+          name: grs2
+          path: grs
   three:
     permissions: write-all
     runs-on: ubuntu-latest
@@ -42,7 +50,11 @@ jobs:
         id: generate
         with:
           token: ${{ secrets.TOKEN }}
-          options: 'username=Zo-Bro-23&theme=onedark' 
+          options: 'username=Zo-Bro-23&theme=onedark'
+      - uses: actions/upload-artifact@master
+        with:
+          name: grs3
+          path: grs
   four:
     permissions: write-all
     runs-on: ubuntu-latest
@@ -57,6 +69,10 @@ jobs:
           token: ${{ secrets.TOKEN }}
           options: 'username=Zo-Bro-23&theme=onedark'
           card: 'top-langs'
+      - uses: actions/upload-artifact@master
+        with:
+          name: grs4
+          path: grs
   five:
     permissions: write-all
     runs-on: ubuntu-latest
@@ -71,6 +87,10 @@ jobs:
           token: ${{ secrets.TOKEN }}
           options: 'username=Zo-Bro-23&repo=zoauth&theme=onedark'
           card: 'repo'
+      - uses: actions/upload-artifact@master
+        with:
+          name: grs5
+          path: grs
   six:
     permissions: write-all
     runs-on: ubuntu-latest
@@ -85,12 +105,40 @@ jobs:
           token: ${{ secrets.TOKEN }}
           options: 'username=@ZoBro23&theme=onedark'
           card: 'wakatime'
+      - uses: actions/upload-artifact@master
+        with:
+          name: grs6
+          path: grs
   push:
     permissions: write-all
     runs-on: ubuntu-latest
     name: Push
     needs: [one, two, three, four, five, six]
     steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: grs1
+          path: grs
+      - uses: actions/download-artifact@master
+        with:
+          name: grs2
+          path: grs
+      - uses: actions/download-artifact@master
+        with:
+          name: grs3
+          path: grs
+      - uses: actions/download-artifact@master
+        with:
+          name: grs4
+          path: grs
+      - uses: actions/download-artifact@master
+        with:
+          name: grs5
+          path: grs
+      - uses: actions/download-artifact@master
+        with:
+          name: grs6
+          path: grs
       - name: Push
         uses: crazy-max/ghaction-github-pages@v3
         with:

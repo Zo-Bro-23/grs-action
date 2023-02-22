@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Generate Stats
-        uses: Zo-Bro-23/grs-action@v1
+        uses: ./
         id: generate
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -30,7 +30,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Generate Top Languages
-        uses: Zo-Bro-23/grs-action@v1
+        uses: ./
         id: generate
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
